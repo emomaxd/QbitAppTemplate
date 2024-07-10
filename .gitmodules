@@ -1,0 +1,3 @@
+[submodule "QbitLite"]
+	path = QbitLite
+	url = https://github.com/EmomaxD/QbitLite.git
