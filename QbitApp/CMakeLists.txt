@@ -1,7 +1,8 @@
 project(QbitApp)
 
 
-set(GLEW_DIR "${CMAKE_SOURCE_DIR}/QbitLite/Engine/vendor/glew")
+set(GLEW_DIR "${CMAKE_SOURCE_DIR}/QbitLite/Engine/vendor/GLEW")
+set(GLEW_WIN_DIR "${CMAKE_SOURCE_DIR}/QbitLite/Engine/vendor/glew_Win")
 set(GLFW_DIR "${CMAKE_SOURCE_DIR}/QbitLite/Engine/vendor/glfw")
 set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/QbitLite/Engine/vendor/imgui")
 set(GLM_DIR "${CMAKE_SOURCE_DIR}/QbitLite/Engine/vendor/glm")
@@ -42,6 +43,20 @@ if(WIN32)
         opengl32 
         gdi32 
         winmm
+        Engine
+    )
+elseif(UNIX)
+    target_link_directories(QbitApp PRIVATE 
+        ${GLFW_DIR}/build/src
+        ${GLEW_DIR}/lib
+    )
+    target_link_libraries(QbitApp PRIVATE 
+        glfw3 
+        GLEW 
+        m 
+        dl 
+        pthread 
+        GL
         Engine
     )
 else()

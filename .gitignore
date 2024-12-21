@@ -4,6 +4,10 @@
 *.sln
 *.vs
 
+QbitApp/QbitApp
+
+Makefile
+
 *.cmake
 *CMakeCache.txt
 *CMakeFiles

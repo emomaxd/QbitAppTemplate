@@ -2,16 +2,14 @@
 
 cd ..
 
-cd QbitLite
+cd QbitLite/Scripts
 
-call git submodule update --init
-
-cd Scripts
+call Setup.bat
 
 call CreateSolution.bat
 
-cd ..
+cd ../..
 
-call cmake -S .
+call cmake .
 
 pause
